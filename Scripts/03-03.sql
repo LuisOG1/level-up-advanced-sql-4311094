@@ -9,7 +9,7 @@ INNER JOIN inventory inv
 -- 2. review the model table
 Select *
 from model
-limit 10;
+limit 40;
 
 -- 3. lookup the modelId for the electric models
 SELECT modelId
