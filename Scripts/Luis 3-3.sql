@@ -12,4 +12,13 @@ from (select s.salesId,
 where EngineType='Electric'
 
 --Subquery with single join selections and subquery in where clause
-select 
+select s.salesId,
+        s.salesAmount,
+        i.year as CarYear,
+        i.isAvailable
+from sales s
+join inventory i on s.inventoryId=i.inventoryId
+where i.modelId in (select modelId
+                    from model
+                    where EngineType='Electric')
+order by s.salesAmount desc
